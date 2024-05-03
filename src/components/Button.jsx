@@ -1,8 +1,8 @@
-function Button({ onClick, type, children }) {
+function Button({ onClick, buttonType, children }) {
   return (
     <button
       onClick={onClick}
-      className={`btn ${type === "secondary" ? "btn--secondary" : ""}`}
+      className={`btn ${buttonType === "secondary" ? "btn--secondary" : ""}`}
     >
       {children}
     </button>
