@@ -1,11 +1,6 @@
+import { buttonLabels } from "../lib/constants";
 import Button from "./Button";
 
-const buttonLabels = [
-  "Mark all as complete",
-  "Mark all as incomplete",
-  "Reset to initial",
-  "Remove all item",
-];
 function ButtonGroup() {
   return (
     <section className="button-group">
