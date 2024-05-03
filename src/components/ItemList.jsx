@@ -1,21 +1,43 @@
-function ItemList({ items }) {
+import EmptyView from "./EmptyView";
+
+function ItemList({ items, handleDeleteItem, handleToggleItem }) {
   return (
-    <ul>
+    <ul className="item-list">
+      {items.length === 0 ? <EmptyView /> : null}
       {items.map((item) => {
-        return <Item key={item.id} item={item} />;
+        return (
+          <Item
+            key={item.id}
+            item={item}
+            onDeleteItem={handleDeleteItem}
+            onToggleItem={handleToggleItem}
+          />
+        );
       })}
     </ul>
   );
 }
 
-function Item({ item }) {
+function Item({ item, onDeleteItem, onToggleItem }) {
   return (
     <li className="item">
       <label>
-        <input type="checkbox" checked={item.packed} />
+        <input
+          type="checkbox"
+          checked={item.packed}
+          onChange={() => {
+            onToggleItem(item.id);
+          }}
+        />
         {item.name}
       </label>
-      <button>❌</button>
+      <button
+        onClick={() => {
+          onDeleteItem(item.id);
+        }}
+      >
+        ❌
+      </button>
     </li>
   );
 }
