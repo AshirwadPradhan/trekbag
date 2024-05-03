@@ -5,6 +5,8 @@ function Sidebar({
   handleAddItem,
   handleRemoveAllItems,
   handleResetToInitial,
+  handleMarkAllAsComplete,
+  handleMarkAllAsIncomplete,
 }) {
   return (
     <div className="sidebar">
@@ -12,6 +14,8 @@ function Sidebar({
       <ButtonGroup
         handleRemoveAllItems={handleRemoveAllItems}
         handleResetToInitial={handleResetToInitial}
+        handleMarkAllAsComplete={handleMarkAllAsComplete}
+        handleMarkAllAsIncomplete={handleMarkAllAsIncomplete}
       />
     </div>
   );
