@@ -23,7 +23,7 @@ function ItemList() {
   const { items, handleDeleteItem, handleToggleItem } = useItemsContext();
 
   const sortedItems = useMemo(() => {
-    [...items].sort((a, b) => {
+    return [...items].sort((a, b) => {
       if (sortBy === "packed") {
         return b.packed - a.packed;
       }
