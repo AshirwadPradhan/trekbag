@@ -20,7 +20,7 @@ const sortingOptions = [
 
 function ItemList() {
   const [sortBy, setSortBy] = useState("default");
-  const { items, handleDeleteItem, handleToggleItem } = useItemsContext();
+  const { items, onDeleteItem, onToggleItem } = useItemsContext();
 
   const sortedItems = useMemo(() => {
     return [...items].sort((a, b) => {
@@ -56,8 +56,8 @@ function ItemList() {
           <Item
             key={item.id}
             item={item}
-            onDeleteItem={handleDeleteItem}
-            onToggleItem={handleToggleItem}
+            onDeleteItem={onDeleteItem}
+            onToggleItem={onToggleItem}
           />
         );
       })}
