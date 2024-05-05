@@ -1,11 +1,13 @@
 import Counter from "./Counter";
 import Logo from "./Logo";
+import { useItemsContext } from "../lib/hooks";
 
-function Header({ total, numPacked }) {
+function Header() {
+  const { items, numPacked } = useItemsContext();
   return (
     <header>
       <Logo />
-      <Counter total={total} numPacked={numPacked} />
+      <Counter total={items.length} numPacked={numPacked()} />
     </header>
   );
 }

@@ -1,12 +1,13 @@
-import { buttonLabels } from "../lib/constants";
 import Button from "./Button";
+import { useItemsContext } from "../lib/hooks";
 
-function ButtonGroup({
-  handleRemoveAllItems,
-  handleResetToInitial,
-  handleMarkAllAsComplete,
-  handleMarkAllAsIncomplete,
-}) {
+function ButtonGroup() {
+  const {
+    handleMarkAllAsComplete,
+    handleMarkAllAsIncomplete,
+    handleResetToInitial,
+    handleRemoveAllItems,
+  } = useItemsContext();
   return (
     <section className="button-group">
       <Button buttonType="secondary" onClick={handleMarkAllAsComplete}>
